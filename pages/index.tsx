@@ -1,6 +1,12 @@
 import Head from "next/head";
+import Lottie from "../components/Lottie";
+import { Container, useBreakpointValue } from "@chakra-ui/react";
 
 export default function Home() {
+  const introAnimationPath = useBreakpointValue({
+    base: "/intro-animation.json",
+    md: "/intro-animation.json",
+  });
   return (
     <div>
       <Head>
@@ -13,8 +19,18 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main></main>
+      <main>
+        <Container maxW="container.lg">
+          <Lottie
+            lottiePlayerOptions={{
+              path: introAnimationPath,
+              // @ts-ignore
+              renderer: "canvas",
+              loop: false,
+            }}
+          />
+        </Container>
+      </main>
     </div>
   );
 }
