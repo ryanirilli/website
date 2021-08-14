@@ -1,11 +1,15 @@
 import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
+
+import BackgroundContextProvider from "../components/BackgroundContext";
+import Theme from "../components/Theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <Theme>
+      <BackgroundContextProvider>
+        <Component {...pageProps} />
+      </BackgroundContextProvider>
+    </Theme>
   );
 }
 export default MyApp;
