@@ -1,5 +1,7 @@
 import { Box, Text, Flex, Icon, IconButton, HStack } from "@chakra-ui/react";
+import { useContext } from "react";
 import { FiLinkedin, FiTwitter, FiInstagram } from "react-icons/fi";
+import { BackgroundContext } from "./BackgroundContext";
 
 const icons = [
   {
@@ -17,9 +19,16 @@ const icons = [
 ];
 
 export default function TopNav(): JSX.Element {
+  const { colors } = useContext(BackgroundContext);
   return (
-    <Box position="sticky" top={0} zIndex="docked">
-      <Box px={[4, null, 8]} pt={[2, null, 4]}>
+    <Box
+      position="sticky"
+      top={0}
+      zIndex="docked"
+      bg={colors.bg}
+      transition="background 500ms ease"
+    >
+      <Box px={[4, null, 8]} py={[2, null, 4]}>
         <HStack>
           <Text textStyle="h3">Ryan Irilli</Text>
           {icons.map(({ DisplayIcon, label }, i) => (

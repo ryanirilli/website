@@ -20,6 +20,7 @@ const fadeIn = {
 
 const animationOptions = {
   path: "/screens-animation.json",
+  loop: false,
 };
 
 export default function YearsExperience() {
@@ -30,7 +31,9 @@ export default function YearsExperience() {
         <Box flexBasis={["60%", null, "100%"]} pt={16}>
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <motion.div variants={fadeIn}>
-              <Text textStyle="h3">10+ Years Experience</Text>
+              <Text mb={2} textStyle="h3">
+                10+ Years Experience
+              </Text>
             </motion.div>
             <motion.div variants={fadeIn}>
               <Text maxW={80}>

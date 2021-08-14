@@ -18,7 +18,7 @@ import YearsExperience from "../components/YearsExeprience";
 import DesignAndDevelopment from "../components/DesignAndDevelopment";
 
 export default function Home() {
-  const [isIntroComplete, setIsIntroComplete] = useBoolean();
+  const [isIntroComplete, setIsIntroComplete] = useBoolean(false);
   const introAnimationPath = useBreakpointValue({
     base: "/mobile-intro-animation.json",
     md: "/desktop-intro-animation.json",
