@@ -50,7 +50,7 @@ export default function AboutMe() {
           </motion.div>
           <motion.div variants={fadeIn}>
             <Text maxW={80}>
-              I live in Seattle, Washington with my partner and co-piolot{" "}
+              I live in Seattle, Washington with my partner and co-pilot{" "}
               <Anchor href="https://twitter.com/enjoylillian">
                 @enjoylillian
               </Anchor>
