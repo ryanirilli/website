@@ -100,7 +100,7 @@ export default function Home() {
           </Container>
           <Box
             position="absolute"
-            bottom={[32]}
+            bottom={[64, null, 32]}
             left="50%"
             transform="translateX(-50%)"
             transition="opacity 1s ease"
