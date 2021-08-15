@@ -1,20 +1,23 @@
-import { Box, Text, Flex, Icon, IconButton, HStack } from "@chakra-ui/react";
+import { Box, Flex, Text, Icon, IconButton, HStack } from "@chakra-ui/react";
 import { useContext } from "react";
-import { FiLinkedin, FiTwitter, FiInstagram } from "react-icons/fi";
+import { FiLinkedin, FiTwitter, FiGithub } from "react-icons/fi";
 import { BackgroundContext } from "./BackgroundContext";
 
 const icons = [
   {
     DisplayIcon: FiLinkedin,
     label: "linkedin link",
+    url: "https://www.linkedin.com/in/ryanirilli/",
+  },
+  {
+    DisplayIcon: FiGithub,
+    label: "github link",
+    url: "https://github.com/ryanirilli",
   },
   {
     DisplayIcon: FiTwitter,
     label: "twitter link",
-  },
-  {
-    DisplayIcon: FiInstagram,
-    label: "instagram link",
+    url: "https://twitter.com/ryanirilli",
   },
 ];
 
@@ -29,18 +32,24 @@ export default function TopNav(): JSX.Element {
       transition="background 500ms ease"
     >
       <Box px={[4, null, 8]} py={[2, null, 4]}>
-        <HStack>
-          <Text textStyle="h3">Ryan Irilli</Text>
-          {icons.map(({ DisplayIcon, label }, i) => (
-            <IconButton
-              key={i}
-              isRound
-              variant="outline"
-              aria-label={label}
-              icon={<Icon as={DisplayIcon} />}
-            />
-          ))}
-        </HStack>
+        <Flex>
+          <Box pr={4} flexGrow={[1, null, 0]}>
+            <Text textStyle="h3">Ryan Irilli</Text>
+          </Box>
+          <HStack>
+            {icons.map(({ DisplayIcon, label, url }, i) => (
+              <IconButton
+                key={i}
+                isRound
+                variant="outline"
+                borderColor={colors.color}
+                aria-label={label}
+                icon={<Icon as={DisplayIcon} />}
+                onClick={() => window.open(url)}
+              />
+            ))}
+          </HStack>
+        </Flex>
       </Box>
     </Box>
   );

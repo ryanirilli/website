@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Head from "next/head";
 import {
   Container,
@@ -9,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FiArrowDown } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { ScaleLinear, scaleLinear } from "d3-scale";
 
 import Lottie, { LottiePLayerOptions } from "../components/Lottie";
 import PageContainer from "../components/PageContainer";
@@ -16,6 +18,22 @@ import TopNav from "../components/TopNav";
 import { useEffect, useMemo } from "react";
 import YearsExperience from "../components/YearsExeprience";
 import DesignAndDevelopment from "../components/DesignAndDevelopment";
+import SystemThinking from "../components/SystemThinking";
+import AboutMe from "../components/AboutMe";
+import useWindowScroll from "../hooks/use-window-scroll";
+
+let scale: ScaleLinear<number, number>;
+const handleScroll = (scrollVal: number, el?: HTMLDivElement | null) => {
+  scale =
+    scale ||
+    scaleLinear()
+      .domain([0, window.innerHeight / 4])
+      .range([1, 0]);
+  const val = scale(scrollVal);
+  if (el) {
+    el.style.opacity = `${val}`;
+  }
+};
 
 export default function Home() {
   const [isIntroComplete, setIsIntroComplete] = useBoolean(false);
@@ -23,6 +41,9 @@ export default function Home() {
     base: "/mobile-intro-animation.json",
     md: "/desktop-intro-animation.json",
   });
+
+  const downArrowRef = useRef<HTMLDivElement>(null);
+  useWindowScroll((val) => handleScroll(val, downArrowRef.current));
 
   useEffect(() => {
     if (!isIntroComplete) {
@@ -46,18 +67,8 @@ export default function Home() {
     <>
       <YearsExperience />
       <DesignAndDevelopment />
-
-      <PageContainer bg="#F7DF1E" color="blue">
-        <p>two</p>
-      </PageContainer>
-
-      <Box h="100vh">
-        <p>three</p>
-      </Box>
-
-      <Box h="100vh">
-        <p>four</p>
-      </Box>
+      <SystemThinking />
+      <AboutMe />
     </>
   );
 
@@ -75,10 +86,10 @@ export default function Home() {
       </Head>
       <main>
         <TopNav />
-        <PageContainer bg="#fff" color="black" position="relative">
+        <PageContainer bg="#EDF2F7" color="#4A5568" position="relative">
           <Container
             px={[0, null, 4]}
-            maxW={["container.xl", null, "container.md"]}
+            maxW={["container.xl", null, "container.sm"]}
           >
             <AspectRatio ratio={1}>
               <Lottie
@@ -95,14 +106,16 @@ export default function Home() {
             transition="opacity 1s ease"
             opacity={isIntroComplete ? 1 : 0}
           >
-            {isIntroComplete && (
-              <motion.div
-                animate={{ y: [0, -20, 20, -20, 20, 0] }}
-                transition={{ duration: 2 }}
-              >
-                <Icon w={[8, null, 16]} h={[8, null, 16]} as={FiArrowDown} />
-              </motion.div>
-            )}
+            <Box ref={downArrowRef}>
+              {isIntroComplete && (
+                <motion.div
+                  animate={{ y: [0, -20, 20, -20, 20, 0] }}
+                  transition={{ duration: 2 }}
+                >
+                  <Icon w={[8, null, 16]} h={[8, null, 10]} as={FiArrowDown} />
+                </motion.div>
+              )}
+            </Box>
           </Box>
         </PageContainer>
         {isIntroComplete && content}
