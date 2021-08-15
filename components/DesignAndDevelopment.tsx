@@ -45,7 +45,7 @@ export default function DesignAndDevelopment() {
   const content = isActivated && (
     <Container pt={16} maxW="container.lg">
       <Box position="relative">
-        <Box position="absolute" top={[0, null, 4]} left={4}>
+        <Box position="absolute" top={[0, null, 4]} left={4} zIndex="1">
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <motion.div variants={fadeIn}>
               <Text mb={2} textStyle="h3">
