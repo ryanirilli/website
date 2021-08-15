@@ -27,7 +27,7 @@ export default function ComparisonSlider({
   leftImageUrl,
   rightImageUrl,
 }: IComparisonSlider): JSX.Element {
-  const [sliderValue, setSliderValue] = useState(50);
+  const [sliderValue, setSliderValue] = useState(0);
   return (
     <>
       <AspectRatio

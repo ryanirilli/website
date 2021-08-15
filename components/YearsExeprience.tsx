@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PageContainer from "./PageContainer";
-import Lottie from "./Lottie";
+import Lottie, { LottiePLayerOptions } from "./Lottie";
 import { useMemo } from "react";
 
 const fadeIn = {
@@ -30,11 +30,11 @@ const fadeIn = {
 export default function YearsExperience() {
   const [isActivated, setIsActivated] = useBoolean();
   const animationPath = useBreakpointValue({
-    base: "/screens-animation.json",
-    md: "/screens-animation.json",
+    base: "/mobile-experience-animation.json",
+    md: "/desktop-experience-animation.json",
   });
 
-  const lottiePlayerOptions = useMemo(
+  const lottiePlayerOptions: LottiePLayerOptions = useMemo(
     () => ({
       path: animationPath,
       loop: false,

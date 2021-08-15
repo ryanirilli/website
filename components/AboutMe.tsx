@@ -41,7 +41,7 @@ export default function AboutMe() {
           onLoadingComplete={setIsShowingImage.on}
         />
       </Box>
-      <Box flexBasis="50%" pl={[4, null, 8]}>
+      <Box flexBasis="50%" pl={[4, null, 8]} pt={[4, null, 0]}>
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <motion.div variants={fadeIn}>
             <Text mb={2} textStyle="h3">
@@ -50,7 +50,7 @@ export default function AboutMe() {
           </motion.div>
           <motion.div variants={fadeIn}>
             <Text maxW={80}>
-              I live in Seattle, Washington with my partner and co-pilot{" "}
+              I live in Seattle, Washington with my wife and co-pilot{" "}
               <Anchor href="https://twitter.com/enjoylillian">
                 @enjoylillian
               </Anchor>
