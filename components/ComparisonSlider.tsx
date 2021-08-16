@@ -9,6 +9,7 @@ import {
   SliderFilledTrack,
   SliderThumb,
 } from "@chakra-ui/react";
+import { FiCode } from "react-icons/fi";
 
 const absoluteFill: BoxProps = {
   position: "absolute",
@@ -77,7 +78,7 @@ export default function ComparisonSlider({
           </Box>
         </Box>
       </AspectRatio>
-      <Box mt={8} px={[0, null, 16]} pb={0} pt={1}>
+      <Box mt={8} px={[4, null, 16]} pb={0} pt={1}>
         <Slider
           value={sliderValue}
           onChange={setSliderValue}
@@ -88,7 +89,9 @@ export default function ComparisonSlider({
           <SliderTrack>
             <SliderFilledTrack bg="white" />
           </SliderTrack>
-          <SliderThumb />
+          <SliderThumb boxSize={8}>
+            <Box color="#1C5DF8" w={4} h={4} as={FiCode} />
+          </SliderThumb>
         </Slider>
       </Box>
     </>
