@@ -110,7 +110,7 @@ export default function Home() {
           </AspectRatio>
           <Box
             position="absolute"
-            bottom={[8, null, 32]}
+            bottom={[64, null, 32]}
             left="50%"
             transform="translateX(-50%)"
             transition="opacity 1s ease"

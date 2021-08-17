@@ -51,9 +51,9 @@ export default function TopNav(): JSX.Element {
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
         <Box px={[4, null, 8]} py={[2, null, 4]}>
           <Flex>
-            <Box pr={4} flexGrow={[1, null, 0]}>
+            {/* <Box pr={4} flexGrow={[1, null, 0]}>
               <Text textStyle="h3">Ryan Irilli</Text>
-            </Box>
+            </Box> */}
             <HStack>
               {icons.map(({ DisplayIcon, label, url }, i) => (
                 <IconButton
