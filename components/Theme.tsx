@@ -55,8 +55,16 @@ const textStyles = {
 const theme = extendTheme({
   styles: {
     global: {
-      html: { height: "100%" },
-      body: { minHeight: "100%", fontFamily: fontFamilies.sans },
+      html: {
+        height: "100%",
+      },
+      body: {
+        minHeight: "100%",
+        fontFamily: fontFamilies.sans,
+        "::-webkit-scrollbar": {
+          display: "none",
+        },
+      },
     },
   },
   textStyles,

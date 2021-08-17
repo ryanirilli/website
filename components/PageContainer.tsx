@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import { Box, BoxProps } from "@chakra-ui/react";
 import IntersectionObserver from "./IntersectionObserver";
 import { BackgroundContext } from "./BackgroundContext";

@@ -41,8 +41,9 @@ export default function TopNav(): JSX.Element {
   const { colors } = useContext(BackgroundContext);
   return (
     <Box
-      position="sticky"
+      position="fixed"
       top={0}
+      width="100%"
       zIndex="docked"
       bg={colors.bg}
       transition="background 500ms ease"

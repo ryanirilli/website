@@ -7,6 +7,7 @@ import {
   AspectRatio,
   useBoolean,
   Icon,
+  Text,
 } from "@chakra-ui/react";
 import { FiArrowDown } from "react-icons/fi";
 import { motion } from "framer-motion";
@@ -38,8 +39,8 @@ const handleScroll = (scrollVal: number, el?: HTMLDivElement | null) => {
 export default function Home() {
   const [isIntroComplete, setIsIntroComplete] = useBoolean(false);
   const introAnimationPath = useBreakpointValue({
-    base: "/mobile-intro-animation.json",
-    md: "/desktop-intro-animation.json",
+    base: "/mobile-intro-animation2.json",
+    md: "/desktop-intro-animation2.json",
   });
 
   const downArrowRef = useRef<HTMLDivElement>(null);
@@ -57,8 +58,8 @@ export default function Home() {
   const introPlayerOptions = useMemo<LottiePLayerOptions>(
     () => ({
       path: introAnimationPath,
-      renderer: "canvas",
       loop: false,
+      renderer: "canvas",
     }),
     [introAnimationPath]
   );
@@ -87,20 +88,29 @@ export default function Home() {
       <main>
         <TopNav />
         <PageContainer bg="#EDF2F7" color="#4A5568" position="relative">
-          <Container
-            px={[0, null, 4]}
-            maxW={["container.xl", null, "container.sm"]}
+          <Box
+            display="none"
+            position="absolute"
+            top={64}
+            left={64}
+            zIndex={1}
+            background="gray.100"
+            py={4}
+            px={8}
           >
-            <AspectRatio ratio={1}>
-              <Lottie
-                onComplete={setIsIntroComplete.on}
-                lottiePlayerOptions={introPlayerOptions}
-              />
-            </AspectRatio>
-          </Container>
+            <Text as="h1" textStyle="h1">
+              Let&apos;s Build That
+            </Text>
+          </Box>
+          <AspectRatio ratio={[9 / 16, null, 16 / 9]}>
+            <Lottie
+              onComplete={setIsIntroComplete.on}
+              lottiePlayerOptions={introPlayerOptions}
+            />
+          </AspectRatio>
           <Box
             position="absolute"
-            bottom={[64, null, 32]}
+            bottom={[8, null, 32]}
             left="50%"
             transform="translateX(-50%)"
             transition="opacity 1s ease"
