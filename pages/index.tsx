@@ -86,7 +86,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <TopNav />
+        <TopNav shouldShow={isIntroComplete} />
         <PageContainer bg="#EDF2F7" color="#4A5568" position="relative">
           <Box
             display="none"

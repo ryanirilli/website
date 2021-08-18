@@ -30,7 +30,6 @@ export default function AboutMe() {
         opacity={isShowingImage ? 1 : 0}
         flexBasis="50%"
         overflow="hidden"
-        borderRightRadius={[0, null, 8]}
         position="relative"
       >
         <Image

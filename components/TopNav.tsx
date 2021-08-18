@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Box, Flex, Text, Icon, IconButton, HStack } from "@chakra-ui/react";
+import Image from "next/image";
+import { Box, Flex, Icon, IconButton, HStack } from "@chakra-ui/react";
 import { useContext } from "react";
 import { FiLinkedin, FiTwitter, FiGithub } from "react-icons/fi";
 import { BackgroundContext } from "./BackgroundContext";
@@ -27,7 +28,6 @@ const fadeIn = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1,
       duration: 1,
     },
   },
@@ -37,7 +37,11 @@ const fadeIn = {
   },
 };
 
-export default function TopNav(): JSX.Element {
+interface ITopNav {
+  shouldShow?: boolean;
+}
+
+export default function TopNav({ shouldShow }: ITopNav): JSX.Element {
   const { colors } = useContext(BackgroundContext);
   return (
     <Box
@@ -48,28 +52,36 @@ export default function TopNav(): JSX.Element {
       bg={colors.bg}
       transition="background 500ms ease"
     >
-      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-        <Box px={[4, null, 8]} py={[2, null, 4]}>
-          <Flex>
-            {/* <Box pr={4} flexGrow={[1, null, 0]}>
+      {shouldShow && (
+        <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+          <Box px={[4, null, 8]} py={[2, null, 4]}>
+            <Flex>
+              {/* <Box pr={4} flexGrow={[1, null, 0]}>
               <Text textStyle="h3">Ryan Irilli</Text>
             </Box> */}
-            <HStack>
-              {icons.map(({ DisplayIcon, label, url }, i) => (
-                <IconButton
-                  key={i}
-                  isRound
-                  variant="outline"
-                  borderColor={colors.color}
-                  aria-label={label}
-                  icon={<Icon as={DisplayIcon} />}
-                  onClick={() => window.open(url)}
-                />
-              ))}
-            </HStack>
-          </Flex>
-        </Box>
-      </motion.div>
+              <Image
+                alt="ryan irilli logo"
+                src="/logo.svg"
+                width={68}
+                height={57}
+              />
+              <HStack ml={2}>
+                {icons.map(({ DisplayIcon, label, url }, i) => (
+                  <IconButton
+                    key={i}
+                    isRound
+                    variant="outline"
+                    borderColor={colors.color}
+                    aria-label={label}
+                    icon={<Icon as={DisplayIcon} />}
+                    onClick={() => window.open(url)}
+                  />
+                ))}
+              </HStack>
+            </Flex>
+          </Box>
+        </motion.div>
+      )}
     </Box>
   );
 }
