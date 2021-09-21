@@ -61,7 +61,7 @@ const theme = extendTheme({
       body: {
         minHeight: "100%",
         fontFamily: fontFamilies.sans,
-        background: "gray.100",
+        background: "black",
         "::-webkit-scrollbar": {
           display: "none",
         },
