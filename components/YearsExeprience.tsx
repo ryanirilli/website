@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PageContainer from "./PageContainer";
+import SectionHeading from "./SectionHeading";
 import Lottie, { LottiePLayerOptions } from "./Lottie";
 import { useMemo } from "react";
 
@@ -47,11 +48,7 @@ export default function YearsExperience() {
       <Box position="relative">
         <Box position="absolute" top={[0, null, 4]} left={[0, null, 4]}>
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-            <motion.div variants={fadeIn}>
-              <Text mb={2} textStyle="h3">
-                10+ Years Experience
-              </Text>
-            </motion.div>
+            <SectionHeading>10+ Years Experience</SectionHeading>
             <motion.div variants={fadeIn}>
               <Text maxW={80}>
                 From Zero-to-One startups to Facebook, Uber, and Zillow, I have
@@ -67,7 +64,7 @@ export default function YearsExperience() {
     </Container>
   );
   return (
-    <PageContainer bg="#2D3748" color="white" onActivate={setIsActivated.on}>
+    <PageContainer bg="#051B2B" color="white" onActivate={setIsActivated.on}>
       {content}
     </PageContainer>
   );

@@ -45,7 +45,7 @@ export default function TopNav({ shouldShow }: ITopNav): JSX.Element {
   const { colors } = useContext(BackgroundContext);
   return (
     <Box
-      position="fixed"
+      position="sticky"
       top={0}
       width="100%"
       zIndex="docked"
@@ -56,9 +56,6 @@ export default function TopNav({ shouldShow }: ITopNav): JSX.Element {
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <Box px={[4, null, 8]} py={[2, null, 4]}>
             <Flex>
-              {/* <Box pr={4} flexGrow={[1, null, 0]}>
-              <Text textStyle="h3">Ryan Irilli</Text>
-            </Box> */}
               <Image
                 alt="ryan irilli logo"
                 src="/logo.svg"

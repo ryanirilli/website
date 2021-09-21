@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import PageContainer from "./PageContainer";
 import Lottie from "./Lottie";
 import { useMemo } from "react";
+import SectionHeading from "./SectionHeading";
 
 const fadeIn = {
   visible: {
@@ -53,9 +54,7 @@ export default function DesignAndDevelopment() {
         >
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <motion.div variants={fadeIn}>
-              <Text mb={2} textStyle="h3">
-                Design & Development
-              </Text>
+              <SectionHeading>Design & Development</SectionHeading>
             </motion.div>
             <motion.div variants={fadeIn}>
               <Text maxW={80}>

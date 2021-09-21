@@ -1,14 +1,20 @@
 import { useRef } from "react";
 import Head from "next/head";
 import {
-  Container,
   Box,
+  Button,
+  Container,
+  Flex,
+  HStack,
   useBreakpointValue,
   AspectRatio,
   useBoolean,
   Icon,
   Text,
 } from "@chakra-ui/react";
+import { FaReact } from "react-icons/fa";
+import { SiApollographql, SiTypescript, SiCsswizardry } from "react-icons/si";
+import { IoLogoVercel } from "react-icons/io5";
 import { FiArrowDown } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { ScaleLinear, scaleLinear } from "d3-scale";
@@ -37,7 +43,7 @@ const handleScroll = (scrollVal: number, el?: HTMLDivElement | null) => {
 };
 
 export default function Home() {
-  const [isIntroComplete, setIsIntroComplete] = useBoolean(false);
+  const [isIntroComplete, setIsIntroComplete] = useBoolean(true);
   const introAnimationPath = useBreakpointValue({
     base: "/mobile-intro-animation2.json",
     md: "/desktop-intro-animation2.json",
@@ -87,46 +93,55 @@ export default function Home() {
       </Head>
       <main>
         <TopNav shouldShow={isIntroComplete} />
-        <PageContainer bg="#EDF2F7" color="#4A5568" position="relative">
-          <Box
-            display="none"
-            position="absolute"
-            top={64}
-            left={64}
-            zIndex={1}
-            background="gray.100"
-            py={4}
-            px={8}
+        <PageContainer bg="black" color="white" position="relative">
+          <Flex
+            minH="100vh"
+            direction="column"
+            justify="flex-start"
+            mt={[0, null, 16]}
           >
-            <Text as="h1" textStyle="h1">
-              Let&apos;s Build That
-            </Text>
-          </Box>
-          <AspectRatio ratio={[9 / 16, null, 16 / 9]}>
-            <Lottie
-              onComplete={setIsIntroComplete.on}
-              lottiePlayerOptions={introPlayerOptions}
-            />
-          </AspectRatio>
-          <Box
-            position="absolute"
-            bottom={[64, null, 32]}
-            left="50%"
-            transform="translateX(-50%)"
-            transition="opacity 1s ease"
-            opacity={isIntroComplete ? 1 : 0}
-          >
-            <Box ref={downArrowRef}>
-              {isIntroComplete && (
-                <motion.div
-                  animate={{ y: [0, -20, 20, -20, 20, 0] }}
-                  transition={{ duration: 2 }}
-                >
-                  <Icon w={[8, null, 16]} h={[8, null, 10]} as={FiArrowDown} />
-                </motion.div>
-              )}
-            </Box>
-          </Box>
+            <Container maxW="container.lg">
+              <AspectRatio ratio={[9 / 16, null, 16 / 9]}>
+                <Lottie
+                  onComplete={setIsIntroComplete.on}
+                  lottiePlayerOptions={introPlayerOptions}
+                />
+              </AspectRatio>
+            </Container>
+            <Container pb={[4, null, 32]} maxW="container.lg">
+              <Flex
+                border="1px"
+                direction={["column", null, "row"]}
+                py={[2, null, 0]}
+                mb={[16, null, 0]}
+              >
+                <Box borderRight={["0px", null, "1px"]} px={4}>
+                  <Text
+                    as="h1"
+                    textStyle="h1"
+                    bgGradient="linear(to-l, #FF5F6D, #FFC371)"
+                    bgClip="text"
+                  >
+                    Hi
+                  </Text>
+                </Box>
+                <Box px={4} py={2} borderRight={["0px", null, "1px"]}>
+                  <Text>
+                    I&apos;m Ryan, a Designer and Frontend Engineer with
+                    experience using modern tools like Typescript, React,
+                    Graphql, Next.js, and Figma to build first class web apps.
+                  </Text>
+                </Box>
+                <HStack px={4} py={2}>
+                  <Icon as={SiTypescript} />
+                  <Icon as={FaReact} />
+                  <Icon as={SiApollographql} />
+                  <Icon as={SiCsswizardry} />
+                  <Icon as={IoLogoVercel} />
+                </HStack>
+              </Flex>
+            </Container>
+          </Flex>
         </PageContainer>
         {isIntroComplete && content}
       </main>

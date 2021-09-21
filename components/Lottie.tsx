@@ -21,12 +21,14 @@ export type LottiePLayerOptions =
   | Omit<AnimationConfigWithPath<"canvas">, "container">;
 interface Props extends BoxProps {
   onComplete?: () => void;
+  onLoopComplete?: () => void;
   lottiePlayerOptions: LottiePLayerOptions;
 }
 
 function Lottie({
   lottiePlayerOptions,
   onComplete,
+  onLoopComplete,
   ...rest
 }: Props): JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,6 +46,8 @@ function Lottie({
       ...lottiePlayerOptions,
     });
     onComplete && animation.addEventListener("complete", onComplete);
+    onLoopComplete &&
+      animation.addEventListener("loopComplete", onLoopComplete);
     return () => {
       animation.destroy();
     };

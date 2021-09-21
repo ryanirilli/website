@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Flex, Box, Text, useBoolean, Link as Anchor } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PageContainer from "./PageContainer";
+import SectionHeading from "./SectionHeading";
 
 const fadeIn = {
   visible: {
@@ -43,9 +44,7 @@ export default function AboutMe() {
       <Box flexBasis="50%" pl={[4, null, 8]} pt={[4, null, 0]}>
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <motion.div variants={fadeIn}>
-            <Text mb={2} textStyle="h3">
-              Location
-            </Text>
+            <SectionHeading>Location</SectionHeading>
           </motion.div>
           <motion.div variants={fadeIn}>
             <Text maxW={80}>

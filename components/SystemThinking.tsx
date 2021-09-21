@@ -3,6 +3,7 @@ import { Box, Flex, Container, Text, useBoolean } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PageContainer from "./PageContainer";
 import ComparisonSlider from "./ComparisonSlider";
+import SectionHeading from "./SectionHeading";
 
 const fadeIn = {
   visible: {
@@ -29,9 +30,7 @@ export default function SystemThinking() {
           {isActivated && (
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
               <motion.div variants={fadeIn}>
-                <Text my={2} textStyle="h3">
-                  System Thinking
-                </Text>
+                <SectionHeading>System Thinking</SectionHeading>
               </motion.div>
               <motion.div variants={fadeIn}>
                 <Text maxW={80} pr={4}>
