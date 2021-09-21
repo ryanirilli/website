@@ -50,7 +50,7 @@ export default function TopNav({ shouldShow }: ITopNav): JSX.Element {
       width="100%"
       zIndex="docked"
       bg={colors.bg}
-      transition="background 500ms ease"
+      transition="background 1s ease"
     >
       {shouldShow && (
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>

@@ -45,7 +45,7 @@ export default function BackgroundContextProvider({
   );
 
   useEffect(() => {
-    document.body.style.transition = "background 500ms ease";
+    document.body.style.transition = "background 1s ease";
   }, []);
 
   return (
