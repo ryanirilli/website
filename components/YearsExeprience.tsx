@@ -64,7 +64,7 @@ export default function YearsExperience() {
     </Container>
   );
   return (
-    <PageContainer bg="#051B2B" color="white" onActivate={setIsActivated.on}>
+    <PageContainer bg="black" color="white" onActivate={setIsActivated.on}>
       {content}
     </PageContainer>
   );
