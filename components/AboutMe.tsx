@@ -1,5 +1,12 @@
 import Image from "next/image";
-import { Flex, Box, Text, useBoolean, Link as Anchor } from "@chakra-ui/react";
+import {
+  Container,
+  Flex,
+  Box,
+  Text,
+  useBoolean,
+  Link as Anchor,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import PageContainer from "./PageContainer";
 import SectionHeading from "./SectionHeading";
@@ -25,23 +32,28 @@ export default function AboutMe() {
   const [isShowingImage, setIsShowingImage] = useBoolean();
 
   const content = isActivated && (
-    <Flex direction={["column", null, "row"]}>
+    <Flex direction={["column", null, "row"]} border="1px" pb={[4, null, 0]}>
       <Box
-        transition="opacity 1s ease"
-        opacity={isShowingImage ? 1 : 0}
         flexBasis="50%"
         overflow="hidden"
         position="relative"
+        borderRight={[0, null, "1px"]}
       >
-        <Image
-          alt="Ryan and Lillian at Banff National park"
-          width={2048}
-          height={1365}
-          src="/hero-photo.jpeg"
-          onLoadingComplete={setIsShowingImage.on}
-        />
+        <Box
+          transform="scale(1.05)"
+          transition="opacity 1s ease"
+          opacity={isShowingImage ? 1 : 0}
+        >
+          <Image
+            alt="Ryan and Lillian at Banff National park"
+            width={2048}
+            height={1365}
+            src="/hero-photo.jpeg"
+            onLoadingComplete={setIsShowingImage.on}
+          />
+        </Box>
       </Box>
-      <Box flexBasis="50%" pl={[4, null, 8]} pt={[4, null, 0]}>
+      <Box flexBasis="50%" px={[4, null, 8]} pt={4}>
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <motion.div variants={fadeIn}>
             <SectionHeading>Location</SectionHeading>
@@ -64,7 +76,7 @@ export default function AboutMe() {
   return (
     <PageContainer bg="black" color="white" onActivate={setIsActivated.on}>
       <Flex direction="column" justify="center" minH="100vh">
-        {content}
+        <Container maxW="container.lg">{content}</Container>
       </Flex>
     </PageContainer>
   );

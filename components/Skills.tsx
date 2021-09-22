@@ -8,7 +8,9 @@ import {
   SiApollographql,
   SiTypescript,
   SiAdobeaftereffects,
+  SiFirebase,
 } from "react-icons/si";
+import { AiFillBuild } from "react-icons/ai";
 import PageContainer from "./PageContainer";
 import SectionHeading from "./SectionHeading";
 
@@ -46,10 +48,18 @@ export default function Skills(): JSX.Element {
         <SectionHeading>Server</SectionHeading>
         <SkillRow name="Node" SkillIcon={GrNode} />
         <SkillRow name="Apollo Graphql" SkillIcon={SiApollographql} />
+        <SkillRow name="Firebase" SkillIcon={SiFirebase} />
       </Box>
-      <SectionHeading>Design</SectionHeading>
-      <SkillRow name="Figma" SkillIcon={FiFigma} />
-      <SkillRow name="After Effects" SkillIcon={SiAdobeaftereffects} />
+      <Box mb={16}>
+        <SectionHeading>Design</SectionHeading>
+        <SkillRow name="Figma" SkillIcon={FiFigma} />
+        <SkillRow name="After Effects" SkillIcon={SiAdobeaftereffects} />
+      </Box>
+      <SectionHeading>Tooling & Libraries</SectionHeading>
+      <SkillRow
+        name="NPM, Webpack, Rollup, Styled-Components &amp; Emotion, Github Actions, GCP"
+        SkillIcon={AiFillBuild}
+      />
     </Container>
   );
   return (
