@@ -122,6 +122,9 @@ export default function Home() {
                     bgClip="text"
                   >
                     Hi
+                    <Box as="span" display={["inline", null, "none"]}>
+                      ,
+                    </Box>
                   </Text>
                 </Box>
                 <Box px={4} py={2} borderRight={["0px", null, "1px"]}>

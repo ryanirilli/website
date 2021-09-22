@@ -72,6 +72,9 @@ export default function TopNav({ shouldShow }: ITopNav): JSX.Element {
                     aria-label={label}
                     icon={<Icon as={DisplayIcon} />}
                     onClick={() => window.open(url)}
+                    _hover={{
+                      bg: "rgba(255,255,255,0.3)",
+                    }}
                   />
                 ))}
               </HStack>
