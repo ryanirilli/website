@@ -84,11 +84,6 @@ export default function Home() {
         <title>
           Ryan Irilli - Javascript, Node, React developer and designer
         </title>
-        <meta
-          name="description"
-          content="10+ years experience building web applications that perform on all devices"
-        />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <TopNav shouldShow={isIntroComplete} />
