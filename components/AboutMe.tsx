@@ -62,7 +62,7 @@ export default function AboutMe() {
     </Flex>
   );
   return (
-    <PageContainer bg="#003B55" color="white" onActivate={setIsActivated.on}>
+    <PageContainer bg="black" color="white" onActivate={setIsActivated.on}>
       <Flex direction="column" justify="center" minH="100vh">
         {content}
       </Flex>
