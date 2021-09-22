@@ -2,7 +2,6 @@ import { useRef } from "react";
 import Head from "next/head";
 import {
   Box,
-  Button,
   Container,
   Flex,
   HStack,
@@ -15,8 +14,6 @@ import {
 import { FaReact } from "react-icons/fa";
 import { SiApollographql, SiTypescript, SiCsswizardry } from "react-icons/si";
 import { IoLogoVercel } from "react-icons/io5";
-import { FiArrowDown } from "react-icons/fi";
-import { motion } from "framer-motion";
 import { ScaleLinear, scaleLinear } from "d3-scale";
 
 import Lottie, { LottiePLayerOptions } from "../components/Lottie";
@@ -26,6 +23,7 @@ import { useEffect, useMemo } from "react";
 import YearsExperience from "../components/YearsExeprience";
 import DesignAndDevelopment from "../components/DesignAndDevelopment";
 import SystemThinking from "../components/SystemThinking";
+import Skills from "../components/Skills";
 import AboutMe from "../components/AboutMe";
 import useWindowScroll from "../hooks/use-window-scroll";
 
@@ -75,6 +73,7 @@ export default function Home() {
       <YearsExperience />
       <DesignAndDevelopment />
       <SystemThinking />
+      <Skills />
       <AboutMe />
     </>
   );
@@ -127,7 +126,7 @@ export default function Home() {
                 </Box>
                 <Box px={4} py={2} borderRight={["0px", null, "1px"]}>
                   <Text>
-                    I&apos;m Ryan, a Designer and Frontend Engineer with
+                    I&apos;m Ryan, a Frontend Engineer & Web Designer with
                     experience using modern tools like Typescript, React,
                     Graphql, Next.js, and Figma to build first class web apps.
                   </Text>

@@ -44,9 +44,9 @@ export default function YearsExperience() {
   );
 
   const content = isActivated && (
-    <Container maxW="container.lg">
+    <Container maxW="container.lg" border={[0, null, "1px"]}>
       <Box position="relative">
-        <Box position="absolute" top={[0, null, 4]} left={[0, null, 4]}>
+        <Box position="absolute" top={[0, null, 8]} left={[0, null, 4]}>
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <SectionHeading>10+ Years Experience</SectionHeading>
             <motion.div variants={fadeIn}>

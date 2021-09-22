@@ -44,11 +44,11 @@ export default function DesignAndDevelopment() {
   );
 
   const content = isActivated && (
-    <Container pt={16} maxW="container.lg">
+    <Container maxW="container.lg" border={[0, null, "1px"]}>
       <Box position="relative">
         <Box
           position="absolute"
-          top={[0, null, 4]}
+          top={[0, null, 8]}
           left={[0, null, 4]}
           zIndex="1"
         >

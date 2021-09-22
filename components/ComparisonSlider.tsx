@@ -31,12 +31,7 @@ export default function ComparisonSlider({
   const [sliderValue, setSliderValue] = useState(0);
   return (
     <>
-      <AspectRatio
-        ratio={16 / 9}
-        bg="red.500"
-        borderRadius={16}
-        overflow="hidden"
-      >
+      <AspectRatio ratio={16 / 9} bg="red.500" overflow="hidden">
         <Box>
           <Box
             {...absoluteFill}

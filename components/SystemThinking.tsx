@@ -24,9 +24,9 @@ const fadeIn = {
 export default function SystemThinking() {
   const [isActivated, setIsActivated] = useBoolean();
   const content = (
-    <Container pt={16} maxW="container.lg">
+    <Container pt={[0, null, 8]} maxW="container.lg" border={[0, null, "1px"]}>
       <Flex direction={["column", null, "row"]}>
-        <Box flexBasis={["100%", null, "33%"]} mb={8}>
+        <Box flexBasis={["100%", null, "33%"]} mb={8} pl={[0, null, 2]}>
           {isActivated && (
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
               <motion.div variants={fadeIn}>
@@ -43,7 +43,7 @@ export default function SystemThinking() {
         </Box>
         <Box
           flex={1}
-          pl={[0, null, 4]}
+          px={[0, null, 4]}
           transition="opacity 1s ease"
           opacity={isActivated ? 1 : 0}
         >
