@@ -69,7 +69,11 @@ export default function YearsExperience() {
         </Box>
       </Container>
       <Container py={4} mt={4} maxW="container.lg">
-        <Flex align="center">
+        <Flex
+          align={["flex-start", null, "center"]}
+          direction={["column", null, "row"]}
+          mb={[32, null, 0]}
+        >
           <Link
             passHref
             href="/case-studies/building-a-web-architecture-optimized-for-speed"
@@ -78,12 +82,13 @@ export default function YearsExperience() {
               leftIcon={<Icon as={FaRegLightbulb} />}
               variant="outline"
               colorScheme="white"
+              mb={[2, null, 0]}
             >
               Read my article
             </Button>
           </Link>
-          <Text pl={2}>
-            on building a web architecture optimized for velocity and quality
+          <Text pl={[0, null, 2]} maxW={["75%", null, "none"]}>
+            on building a web architecture optimized for velocity and quality.
           </Text>
         </Flex>
       </Container>
