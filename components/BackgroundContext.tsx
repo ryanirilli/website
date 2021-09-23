@@ -26,7 +26,7 @@ export default function BackgroundContextProvider({
 }: IBackgroundContextProvider): JSX.Element {
   const [colors, setColors] = useState<TColor>({
     color: "",
-    bg: "",
+    bg: "black",
   });
 
   const contextValue = useMemo<IBackgroundContext>(

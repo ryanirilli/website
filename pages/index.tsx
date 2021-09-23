@@ -19,6 +19,7 @@ import { ScaleLinear, scaleLinear } from "d3-scale";
 import Lottie, { LottiePLayerOptions } from "../components/Lottie";
 import PageContainer from "../components/PageContainer";
 import TopNav from "../components/TopNav";
+import Footer from "../components/Footer";
 import { useEffect, useMemo } from "react";
 import YearsExperience from "../components/YearsExeprience";
 import DesignAndDevelopment from "../components/DesignAndDevelopment";
@@ -75,6 +76,7 @@ export default function Home() {
       <SystemThinking />
       <Skills />
       <AboutMe />
+      <Footer />
     </>
   );
 

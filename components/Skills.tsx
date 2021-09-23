@@ -55,9 +55,9 @@ export default function Skills(): JSX.Element {
         <SkillRow name="Figma" SkillIcon={FiFigma} />
         <SkillRow name="After Effects" SkillIcon={SiAdobeaftereffects} />
       </Box>
-      <SectionHeading>Tooling & Libraries</SectionHeading>
+      <SectionHeading>Tooling</SectionHeading>
       <SkillRow
-        name="NPM, Webpack, Rollup, Styled-Components &amp; Emotion, Github Actions, GCP"
+        name="NPM, Webpack, Rollup, Github Actions, GCP"
         SkillIcon={AiFillBuild}
       />
     </Container>
