@@ -57,8 +57,8 @@ export default function YearsExperience() {
               <SectionHeading>10+ Years Experience</SectionHeading>
               <motion.div variants={fadeIn}>
                 <Text maxW={80}>
-                  From Zero-to-One startups to Facebook, Uber, and Zillow, I
-                  have dedicated my career to building the modern web.
+                  I have dedicated my career to building web applications that
+                  scale with the business they serve.
                 </Text>
               </motion.div>
             </motion.div>
@@ -84,11 +84,12 @@ export default function YearsExperience() {
               colorScheme="white"
               mb={[2, null, 0]}
             >
-              Read my article
+              Read my post
             </Button>
           </Link>
           <Text pl={[0, null, 2]} maxW={["75%", null, "none"]}>
-            on building a web architecture optimized for velocity and quality.
+            on building a web architecture optimized for developer happiness and
+            product growth
           </Text>
         </Flex>
       </Container>

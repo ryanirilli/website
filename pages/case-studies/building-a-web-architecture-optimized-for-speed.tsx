@@ -1,24 +1,46 @@
+import { useMemo } from "react";
 import Link from "next/link";
-import { Box, Container, Text, Icon, Button } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Container,
+  Text,
+  Icon,
+  Button,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
 import Head from "next/head";
+import Lottie, { LottiePLayerOptions } from "../../components/Lottie";
 import SectionHeading from "../../components/SectionHeading";
 import TopNav from "../../components/TopNav";
 import Footer from "../../components/Footer";
 
-export default function CaseStudyZillow(): JSX.Element {
+export default function CaseStudyArchitecture(): JSX.Element {
+  const animationPath = useBreakpointValue({
+    base: "/articles/web-architecture/mobile-architecture.json",
+    md: "/articles/web-architecture/desktop-architecture.json",
+  });
+
+  const introPlayerOptions = useMemo<LottiePLayerOptions>(
+    () => ({
+      path: animationPath,
+    }),
+    [animationPath]
+  );
+
   return (
     <>
       <Head>
         <title>
           Ryan Irilli - Building a Web Architecture Optimized for developer
-          velocity and quality
+          happiness and product growth.
         </title>
       </Head>
       <TopNav />
       <Container maxW="container.lg" mb={32}>
-        <Box py={32}>
-          <Link href="/">
+        <Box pt={32}>
+          <Link passHref href="/">
             <Button
               variant="link"
               colorScheme="white"
@@ -31,21 +53,23 @@ export default function CaseStudyZillow(): JSX.Element {
             Building a Web Architecture
           </Text>
           <Text as="h1">
-            Optimized for developer velocity <i>and</i> quality
+            Optimized for developer happiness and product growth
           </Text>
         </Box>
+        <AspectRatio ratio={[9 / 16, null, 16 / 9]} py={16}>
+          <Lottie lottiePlayerOptions={introPlayerOptions} />
+        </AspectRatio>
         <Box maxW={["auto", null, "50%"]} mb={32}>
           <SectionHeading>Overview</SectionHeading>
           <Text mb={4}>
             The web platform is constantly evolving along with the tools,
             libraries and patterns that developers use to build on top of it. In
-            this article, I propose some core technologies to make a web stack
-            that provides a great developer experience as well as a scalable
-            product.
+            this article, I highlight the core technologies that I consider to
+            be essential for building modern web apps.
           </Text>
         </Box>
         <Container mt={16} px={0}>
-          <Text as="h4" textStyle="h4">
+          <Text as="h3" textStyle="h3" mb={2}>
             Vercel, Next.js and React
           </Text>
           <Text mb={4}>
@@ -59,14 +83,15 @@ export default function CaseStudyZillow(): JSX.Element {
           </Text>
           <Text mb={16}>
             Along with a dev environment, page routing, built in JSON API, image
-            optimization and serverside rendering, Vercel offers an incredibly
-            easy to use hosting solution that has CI/CD built in. By connecting
-            your repository to your project, Vercel triggers a production build
-            on every commit to your main branch and deploys a preview
-            environment for every feature branch.
+            optimization and serverside rendering in the Next.js framework,
+            Vercel as a platform offers an incredibly easy to use hosting
+            solution that has CI/CD built in, environment variables, and DNS
+            configuration. By connecting your repository to your project, Vercel
+            triggers a production build on every commit to your main branch and
+            deploys a preview environment for every feature branch.
           </Text>
 
-          <Text as="h4" textStyle="h4">
+          <Text as="h3" textStyle="h3" mb={2}>
             Chakra UI
           </Text>
           <Text mb={4}>
@@ -87,7 +112,7 @@ export default function CaseStudyZillow(): JSX.Element {
             implement.
           </Text>
 
-          <Text as="h4" textStyle="h4">
+          <Text as="h3" textStyle="h3" mb={2}>
             Storybook
           </Text>
           <Text mb={16}>
@@ -100,7 +125,7 @@ export default function CaseStudyZillow(): JSX.Element {
             across their product(s).
           </Text>
 
-          <Text as="h4" textStyle="h4">
+          <Text as="h3" textStyle="h3" mb={2}>
             Graphql with Apollo
           </Text>
           <Text mb={16}>
@@ -114,7 +139,7 @@ export default function CaseStudyZillow(): JSX.Element {
             data sources.
           </Text>
 
-          <Text as="h4" textStyle="h4">
+          <Text as="h3" textStyle="h3" mb={2}>
             Firebase
           </Text>
           <Text mb={16}>
@@ -127,7 +152,7 @@ export default function CaseStudyZillow(): JSX.Element {
             multi-factor authentication.
           </Text>
 
-          <Text as="h4" textStyle="h4">
+          <Text as="h3" textStyle="h3" mb={2}>
             Sanity CMS
           </Text>
           <Text mb={4}>

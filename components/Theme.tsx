@@ -52,6 +52,12 @@ const textStyles = {
   },
 };
 
+const buttonStyles = {
+  baseStyle: {
+    borderRadius: "none",
+  },
+};
+
 const theme = extendTheme({
   styles: {
     global: {
@@ -68,6 +74,9 @@ const theme = extendTheme({
         },
       },
     },
+  },
+  components: {
+    Button: buttonStyles,
   },
   textStyles,
 });
