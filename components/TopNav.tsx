@@ -13,6 +13,7 @@ const fadeIn = {
     y: 0,
     transition: {
       duration: 1,
+      staggerChildren: 0.3,
     },
   },
   hidden: {
@@ -52,18 +53,19 @@ export default function TopNav({ shouldShow = true }: ITopNav): JSX.Element {
               </Link>
               <HStack ml={2}>
                 {socialIcons.map(({ DisplayIcon, label, url }, i) => (
-                  <IconButton
-                    key={i}
-                    isRound
-                    variant="outline"
-                    borderColor={colors.color}
-                    aria-label={label}
-                    icon={<Icon as={DisplayIcon} />}
-                    onClick={() => window.open(url)}
-                    _hover={{
-                      bg: "rgba(255,255,255,0.3)",
-                    }}
-                  />
+                  <motion.div key={i} variants={fadeIn}>
+                    <IconButton
+                      isRound
+                      variant="outline"
+                      borderColor={colors.color}
+                      aria-label={label}
+                      icon={<Icon as={DisplayIcon} />}
+                      onClick={() => window.open(url)}
+                      _hover={{
+                        bg: "rgba(255,255,255,0.3)",
+                      }}
+                    />
+                  </motion.div>
                 ))}
               </HStack>
             </Flex>
