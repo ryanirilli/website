@@ -84,7 +84,7 @@ export default function Home() {
     <div>
       <Head>
         <title>
-          Ryan Irilli - Javascript, Node, React developer and designer
+          Ryan Irilli - React, Typescript, Node Developer and Designer
         </title>
       </Head>
       <main>
