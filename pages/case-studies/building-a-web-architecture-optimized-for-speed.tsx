@@ -248,12 +248,13 @@ export default function CaseStudyArchitecture(): JSX.Element {
           <SectionHeading>Conclusion</SectionHeading>
           <Text mb={4}>
             This list represents a very powerful stack at a high level. I
-            believe they address a wide array of project requirements and work
-            very well together. By using these tools, teams can truly focus on
-            building what&apos;s important for the business. They abstract away
-            a huge amount of boilerplate and glue code that make things work
-            while still providing a considerable amount of flexibility not yet
-            available in low-code solutions.
+            believe these tools address work very well together and allow
+            developers to address a wide array of project requirements. By
+            leveraging these solutions, teams can truly focus on building
+            what&apos;s important for the business and not stuck nursing the
+            architecture. They abstract away a huge amount of boilerplate and
+            glue code that make things work while still providing hooks to serve
+            your teams unique needs.
           </Text>
         </Container>
       </Container>
