@@ -83,12 +83,12 @@ export default function CaseStudyArchitecture(): JSX.Element {
           </Text>
           <Text mb={16}>
             Along with a dev environment, page routing, built in JSON API, image
-            optimization and serverside rendering in the Next.js framework,
-            Vercel as a platform offers an incredibly easy to use hosting
-            solution that has CI/CD built in, environment variables, and DNS
-            configuration. By connecting your repository to your project, Vercel
-            triggers a production build on every commit to your main branch and
-            deploys a preview environment for every feature branch.
+            optimization and serverside rendering in Next, Vercel as a platform
+            offers an incredibly easy to use hosting solution that has CI/CD
+            built in, environment variables, and DNS configuration. By
+            connecting your repository to your project, Vercel triggers a
+            production deployment on every commit to your main branch and a
+            preview environment for every feature branch.
           </Text>
 
           <Text as="h3" textStyle="h3" mb={2}>
@@ -176,9 +176,9 @@ export default function CaseStudyArchitecture(): JSX.Element {
           <SectionHeading>Conclusion</SectionHeading>
           <Text mb={4}>
             This list represents a very powerful stack at a high level. I
-            believe they address a wide array of project requirmenets and work
+            believe they address a wide array of project requirements and work
             very well together. By using these tools, teams can truly focus on
-            building what&apos;s important for your business. They abstract away
+            building what&apos;s important for the business. They abstract away
             a huge amount of boilerplate and glue code that make things work
             while still providing a considerable amount of flexibility not yet
             available in low-code solutions.
