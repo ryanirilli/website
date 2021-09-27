@@ -68,8 +68,8 @@ export default function CaseStudyArchitecture(): JSX.Element {
             <Text mb={4}>
               The web platform is constantly evolving along with the tools,
               libraries and patterns that developers use to build on top of it.
-              What developers and product managers need is a system, tools, and
-              environments that lend themselves to rapid iteration without a ton
+              What developers and product managers need is a set of services and
+              frameworks that lend themselves to rapid iteration without a ton
               of boilerplate, hard to maintain in-house scripts, and internal
               tools.
             </Text>
@@ -77,7 +77,8 @@ export default function CaseStudyArchitecture(): JSX.Element {
               By freeing ourselves of this burden, we can dedicate our focus to
               creating solutions for real world problems. In this article, I
               highlight the core technologies that I consider to be essential
-              for building modern web apps.
+              for building modern web apps, ideal for startups and small teams
+              that need to move fast.
             </Text>
           </Box>
           <Container mt={16} px={0}>
