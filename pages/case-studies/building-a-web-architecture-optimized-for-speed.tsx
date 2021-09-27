@@ -6,10 +6,12 @@ import {
   Container,
   Text,
   Icon,
+  Link as Anchor,
   Button,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import Head from "next/head";
 import Lottie, { LottiePLayerOptions } from "../../components/Lottie";
 import SectionHeading from "../../components/SectionHeading";
@@ -81,7 +83,7 @@ export default function CaseStudyArchitecture(): JSX.Element {
             it&apos;s also difficult to maintain as plugins evolve and
             performance changes over time.
           </Text>
-          <Text mb={16}>
+          <Text mb={4}>
             Along with a dev environment, page routing, built in JSON API, image
             optimization and serverside rendering in Next, Vercel as a platform
             offers an incredibly easy to use hosting solution that has CI/CD
@@ -90,6 +92,26 @@ export default function CaseStudyArchitecture(): JSX.Element {
             production deployment on every commit to your main branch and a
             preview environment for every feature branch.
           </Text>
+          <Box mb={16}>
+            <Text fontWeight="bold" borderBottom="1px" mb={2}>
+              Reference
+            </Text>
+            <Box>
+              <Anchor href="https://vercel.com" isExternal>
+                Vercel <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+            <Box>
+              <Anchor href="https://nextjs.org/" isExternal>
+                Next.js <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+            <Box>
+              <Anchor href="https://reactjs.org/" isExternal>
+                React <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+          </Box>
 
           <Text as="h3" textStyle="h3" mb={2}>
             Chakra UI
@@ -103,7 +125,7 @@ export default function CaseStudyArchitecture(): JSX.Element {
             can easily compose and configure components for any use case without
             having to invent interaction models.
           </Text>
-          <Text mb={16}>
+          <Text mb={4}>
             Chakra does this incredibly well by leveraging Styled-System, a
             css-in-js based solution. Your application is provided a custom
             Theme and React components that accept token values as props.
@@ -111,11 +133,21 @@ export default function CaseStudyArchitecture(): JSX.Element {
             breakpoint values, making responsive design extremely easy to
             implement.
           </Text>
+          <Box mb={16}>
+            <Text fontWeight="bold" borderBottom="1px" mb={2}>
+              Reference
+            </Text>
+            <Box>
+              <Anchor href="https://chakra-ui.com/" isExternal>
+                Chakra UI <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+          </Box>
 
           <Text as="h3" textStyle="h3" mb={2}>
             Storybook
           </Text>
-          <Text mb={16}>
+          <Text mb={4}>
             Gone are the days of developing UI for your application directly in
             the app itself. That process can be excruciatingly slow for
             developers to iterate on. With Storybook, you can build components
@@ -124,11 +156,21 @@ export default function CaseStudyArchitecture(): JSX.Element {
             great for teams looking to maintain a consistent core experience
             across their product(s).
           </Text>
+          <Box mb={16}>
+            <Text fontWeight="bold" borderBottom="1px" mb={2}>
+              Reference
+            </Text>
+            <Box>
+              <Anchor href="https://storybook.js.org/" isExternal>
+                Storybook <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+          </Box>
 
           <Text as="h3" textStyle="h3" mb={2}>
             Graphql with Apollo
           </Text>
-          <Text mb={16}>
+          <Text mb={4}>
             Data management in single page applications has long been a tricky
             challenge. A developer might start by making API requests using
             Fetch and combining or transofrming responses to fit specific UI
@@ -138,11 +180,21 @@ export default function CaseStudyArchitecture(): JSX.Element {
             single request. On the serverside, data can be resolved by numerous
             data sources.
           </Text>
+          <Box mb={16}>
+            <Text fontWeight="bold" borderBottom="1px" mb={2}>
+              Reference
+            </Text>
+            <Box>
+              <Anchor href="https://www.apollographql.com/" isExternal>
+                Apollo <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+          </Box>
 
           <Text as="h3" textStyle="h3" mb={2}>
             Firebase
           </Text>
-          <Text mb={16}>
+          <Text mb={4}>
             Having a web framework and environments to build apps is great, but
             of course real applications also need authentication and a
             persistence layer for user data. Firebase makes that simple by
@@ -151,6 +203,16 @@ export default function CaseStudyArchitecture(): JSX.Element {
             third party integrations (Google, Facebook etc.) as well as
             multi-factor authentication.
           </Text>
+          <Box mb={16}>
+            <Text fontWeight="bold" borderBottom="1px" mb={2}>
+              Reference
+            </Text>
+            <Box>
+              <Anchor href="https://firebase.google.com/" isExternal>
+                Firebase <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+          </Box>
 
           <Text as="h3" textStyle="h3" mb={2}>
             Sanity CMS
@@ -165,7 +227,7 @@ export default function CaseStudyArchitecture(): JSX.Element {
             types and relationships between pieces of content in their open
             source project Sanity Studio.
           </Text>
-          <Text mb={16}>
+          <Text mb={4}>
             Rather than having an all encompassing kitchen sink admin dashboard
             like Wordpress, Sanity allows the product owners decide what control
             they actually need. This allows developers to easily provide that
@@ -173,6 +235,16 @@ export default function CaseStudyArchitecture(): JSX.Element {
             easily understand the interface and not be burdened by an
             overhwelming admin UI.
           </Text>
+          <Box mb={16}>
+            <Text fontWeight="bold" borderBottom="1px" mb={2}>
+              Reference
+            </Text>
+            <Box>
+              <Anchor href="https://www.sanity.io/" isExternal>
+                Sanity <Icon as={HiOutlineExternalLink} mx={2} />
+              </Anchor>
+            </Box>
+          </Box>
           <SectionHeading>Conclusion</SectionHeading>
           <Text mb={4}>
             This list represents a very powerful stack at a high level. I
