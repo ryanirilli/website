@@ -58,7 +58,7 @@ export default function DesignAndDevelopment() {
             </motion.div>
             <motion.div variants={fadeIn}>
               <Text maxW={80}>
-                I take a principled approach to product design and frontend
+                I take a principled approach to Product Design and frontend
                 engineering, bringing together both disciplines to craft a
                 consistent and scalable user experience.
               </Text>
