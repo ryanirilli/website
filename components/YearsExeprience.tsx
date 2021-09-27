@@ -22,7 +22,7 @@ const fadeIn = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0,
+      delay: 1,
       staggerChildren: 0.2,
       duration: 1,
     },

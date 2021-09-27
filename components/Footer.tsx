@@ -12,7 +12,7 @@ import { socialIcons } from "../utils/contants";
 export default function Footer(): JSX.Element {
   return (
     <Box bg={"rgba(255,255,255,0.05)"} py={16}>
-      <Container>
+      <Container maxW="container.lg">
         <Flex align="flex-start">
           <Box flex={1}>
             <Text>

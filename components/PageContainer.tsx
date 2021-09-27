@@ -8,40 +8,45 @@ interface IPageContainer extends BoxProps {
   bg: string;
   color: string;
   onActivate?: () => void;
+  observerOptions?: IntersectionObserverInit;
 }
 
-const defaultObserverOptions = { threshold: 0.5 };
+const defaultObserverOptions = {
+  threshold: 0.5,
+};
 
 export default function PageContainer({
   children,
   bg,
   color,
   onActivate,
+  observerOptions = {},
   ...rest
 }: IPageContainer): JSX.Element {
-  const { setBackground } = useContext(BackgroundContext);
+  const { setBackground, colors } = useContext(BackgroundContext);
   const hasActivatedRef = useRef(false);
   const observerCallback = useCallback(
     (entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0].isIntersecting && bg !== colors.bg) {
         setBackground(bg, color);
-        if (!hasActivatedRef.current) {
-          hasActivatedRef.current = true;
-          onActivate?.();
-        }
+      }
+      if (entries[0].isIntersecting && !hasActivatedRef.current) {
+        hasActivatedRef.current = true;
+        onActivate?.();
       }
     },
-    [setBackground, bg, color, onActivate]
+    [setBackground, colors, bg, color, onActivate]
   );
 
   return (
-    <IntersectionObserver
-      observerOptions={defaultObserverOptions}
-      observerCallback={observerCallback}
-    >
+    <>
+      <IntersectionObserver
+        observerOptions={{ ...defaultObserverOptions, ...observerOptions }}
+        observerCallback={observerCallback}
+      />
       <Box minH="100vh" {...rest}>
         {children}
       </Box>
-    </IntersectionObserver>
+    </>
   );
 }

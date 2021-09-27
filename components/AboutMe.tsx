@@ -55,9 +55,7 @@ export default function AboutMe() {
       </Box>
       <Box flexBasis="50%" px={[4, null, 8]} pt={4}>
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-          <motion.div variants={fadeIn}>
-            <SectionHeading>Location</SectionHeading>
-          </motion.div>
+          <SectionHeading>Location</SectionHeading>
           <motion.div variants={fadeIn}>
             <Text maxW={80}>
               I live in Seattle, Washington with my wife and co-pilot{" "}

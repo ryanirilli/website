@@ -63,7 +63,11 @@ export default function Skills(): JSX.Element {
     </Container>
   );
   return (
-    <PageContainer bg="black" color="white">
+    <PageContainer
+      bg="black"
+      color="white"
+      observerOptions={{ threshold: 0.3 }}
+    >
       {content}
     </PageContainer>
   );

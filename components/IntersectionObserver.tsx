@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Box, BoxProps } from "@chakra-ui/react";
 
 interface Props extends BoxProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   observerOptions?: IntersectionObserverInit;
   observerCallback: IntersectionObserverCallback;
 }

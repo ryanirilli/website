@@ -53,9 +53,7 @@ export default function DesignAndDevelopment() {
           zIndex="1"
         >
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-            <motion.div variants={fadeIn}>
-              <SectionHeading>Design & Development</SectionHeading>
-            </motion.div>
+            <SectionHeading>Design & Development</SectionHeading>
             <motion.div variants={fadeIn}>
               <Text maxW={80}>
                 I take a principled approach to Product Design and Frontend

@@ -29,9 +29,7 @@ export default function SystemThinking() {
         <Box flexBasis={["100%", null, "33%"]} mb={8} pl={[0, null, 2]}>
           {isActivated && (
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-              <motion.div variants={fadeIn}>
-                <SectionHeading>System Thinking</SectionHeading>
-              </motion.div>
+              <SectionHeading>System Thinking</SectionHeading>
               <motion.div variants={fadeIn}>
                 <Text maxW={80} pr={4}>
                   I focus on Design Systems, UX Heuristics, and Information

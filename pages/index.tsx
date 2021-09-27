@@ -89,7 +89,7 @@ export default function Home() {
       </Head>
       <main>
         <TopNav shouldShow={isIntroComplete} />
-        <PageContainer bg="black" color="white" position="relative">
+        <Box minH="100vh" position="relative">
           <Flex
             minH="100vh"
             direction="column"
@@ -141,7 +141,7 @@ export default function Home() {
               </Flex>
             </Container>
           </Flex>
-        </PageContainer>
+        </Box>
         {isIntroComplete && content}
       </main>
     </div>
