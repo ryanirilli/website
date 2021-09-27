@@ -68,8 +68,16 @@ export default function CaseStudyArchitecture(): JSX.Element {
             <Text mb={4}>
               The web platform is constantly evolving along with the tools,
               libraries and patterns that developers use to build on top of it.
-              In this article, I highlight the core technologies that I consider
-              to be essential for building modern web apps.
+              What developers and product managers need is a system, tools, and
+              environments that lend themselves to rapid iteration without a ton
+              of boilerplate, hard to maintain in-house scripts, and internal
+              tools.
+            </Text>
+            <Text mb={4}>
+              By freeing ourselves of this burden, we can dedicate our focus to
+              creating solutions for real world problems. In this article, I
+              highlight the core technologies that I consider to be essential
+              for building modern web apps.
             </Text>
           </Box>
           <Container mt={16} px={0}>
@@ -80,10 +88,11 @@ export default function CaseStudyArchitecture(): JSX.Element {
               It&apos;s arguably the most powerful trifecta in a web
               developer&apos;s toolbelt today. Prior to Vercel&apos;s Next
               framework, teams were straddled with configuirng and maintaining
-              build systems and dev environments from scratch with long Webpack
-              configs. Not only is this a huge effort to design and implement,
-              it&apos;s also difficult to maintain as plugins evolve and
-              performance changes over time.
+              build systems and dev environments from scratch with custom
+              Webpack configs for both dev and prod environments. Not only is
+              this a huge effort to design and implement, it&apos;s also
+              difficult to maintain as plugins evolve and performance changes
+              over time.
             </Text>
             <Text mb={4}>
               Along with a dev environment, page routing, built in JSON API,
@@ -123,12 +132,11 @@ export default function CaseStudyArchitecture(): JSX.Element {
               core library of UI components. By creating a standard visual
               language and a set of reusable components, developers can move
               fast by focusing more on the user <i>journey</i> rather than the
-              user <i>experience</i>. Since the UX can be codified into the
-              system, you can easily compose and configure components for any
-              use case without having to invent interaction models.
+              user <i>experience</i>. With a cohesive system, you can easily
+              compose and configure components for any use case.
             </Text>
             <Text mb={4}>
-              Chakra does this incredibly well by leveraging Styled-System, a
+              Chakra does this very well by leveraging Styled-System, a
               css-in-js based solution. Your application is provided a custom
               Theme and React components that accept token values as props.
               Additionally, values can be passed as an array that corresponds to
@@ -249,7 +257,7 @@ export default function CaseStudyArchitecture(): JSX.Element {
             </Box>
             <SectionHeading>Conclusion</SectionHeading>
             <Text mb={4}>
-              This list represents a very powerful stack at a high level. I
+              This list represents a very powerful tech stack at a high level. I
               believe these tools address work very well together and allow
               developers to address a wide array of project requirements. By
               leveraging these solutions, teams can truly focus on building
