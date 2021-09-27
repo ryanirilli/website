@@ -57,9 +57,8 @@ export default function YearsExperience() {
               <SectionHeading>10+ Years Experience</SectionHeading>
               <motion.div variants={fadeIn}>
                 <Text maxW={80}>
-                  I have help build applications that scale and adapt to the
-                  business, by using tools and frameworks made for modern web
-                  development.
+                  I have helped build applications at scale and by using tools
+                  and frameworks made for modern web development.
                 </Text>
               </motion.div>
             </motion.div>
