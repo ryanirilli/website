@@ -78,7 +78,7 @@ export default function CaseStudyArchitecture(): JSX.Element {
             framework, teams were straddled with configuirng and maintaining
             build systems and dev environments from scratch with long Webpack
             configs. Not only is this a huge effort to design and implement,
-            it&apos;s also difficult to maintain as plugins evolv and
+            it&apos;s also difficult to maintain as plugins evolve and
             performance changes over time.
           </Text>
           <Text mb={16}>
