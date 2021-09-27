@@ -175,10 +175,10 @@ export default function CaseStudyArchitecture(): JSX.Element {
             challenge. A developer might start by making API requests using
             Fetch and combining or transofrming responses to fit specific UI
             requirements. Apollo Server and Client alleviate that pain by making
-            it easy for frontend developers to specify a schema and a
-            standardized approach for fetching only the fields you need in a
-            single request. On the serverside, data can be resolved by numerous
-            data sources.
+            it easy for frontend developers to design a schema and a
+            standardized approach for queries and mutations. On the serverside,
+            data can be resolved by numerous data sources keeping your client
+            code free of complex fetch logic.
           </Text>
           <Box mb={16}>
             <Text fontWeight="bold" borderBottom="1px" mb={2}>
