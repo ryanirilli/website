@@ -243,8 +243,8 @@ export default function CaseStudyArchitecture(): JSX.Element {
               dashboard like Wordpress, Sanity allows the product owners decide
               what control they actually need. This allows developers to easily
               provide that control and nothing more, making it easy for non
-              technical folks to easily understand the interface and not be
-              burdened by an overhwelming admin UI.
+              technical folks to understand and not be burdened by an
+              overhwelming admin UI.
             </Text>
             <Box mb={16}>
               <Text fontWeight="bold" borderBottom="1px" mb={2}>
