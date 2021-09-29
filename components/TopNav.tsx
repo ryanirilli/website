@@ -40,14 +40,14 @@ export default function TopNav({ shouldShow = true }: ITopNav): JSX.Element {
       {shouldShow && (
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <Box px={[4, null, 8]} py={[2, null, 4]}>
-            <Flex>
+            <Flex align="center">
               <Link href="/">
                 <a>
                   <Image
                     alt="ryan irilli logo"
                     src="/logo.svg"
                     width={68}
-                    height={57}
+                    height={45}
                   />
                 </a>
               </Link>

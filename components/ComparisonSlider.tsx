@@ -31,7 +31,7 @@ export default function ComparisonSlider({
   const [sliderValue, setSliderValue] = useState(0);
   return (
     <>
-      <AspectRatio ratio={16 / 9} bg="red.500" overflow="hidden">
+      <AspectRatio ratio={16 / 9} bg="red.500" overflow="hidden" border="1px">
         <Box>
           <Box
             {...absoluteFill}
@@ -54,11 +54,11 @@ export default function ComparisonSlider({
           <Box
             w="16px"
             h="100%"
-            bgGradient="linear(to-r,rgba(0,0,0,0.3), rgba(0,0,0,0))"
+            borderLeft="1px"
             position="absolute"
             left={`${sliderValue}%`}
             top={0}
-            opacity={0.5}
+            opacity={1}
             zIndex={2}
           />
           <Box {...absoluteFill} userSelect="none" bg="gray.100">
