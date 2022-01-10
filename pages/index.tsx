@@ -17,7 +17,6 @@ import { IoLogoVercel } from "react-icons/io5";
 import { ScaleLinear, scaleLinear } from "d3-scale";
 
 import Lottie, { LottiePLayerOptions } from "../components/Lottie";
-import PageContainer from "../components/PageContainer";
 import TopNav from "../components/TopNav";
 import Footer from "../components/Footer";
 import { useEffect, useMemo } from "react";
@@ -49,7 +48,16 @@ export default function Home() {
   });
 
   const downArrowRef = useRef<HTMLDivElement>(null);
+  const introAnimationContainerRef = useRef<HTMLDivElement>(null);
   useWindowScroll((val) => handleScroll(val, downArrowRef.current));
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (introAnimationContainerRef.current) {
+        introAnimationContainerRef.current.style.opacity = "1";
+      }
+    }, 500);
+  }, []);
 
   useEffect(() => {
     if (!isIntroComplete) {
@@ -86,6 +94,21 @@ export default function Home() {
         <title>
           Ryan Irilli - React, Typescript, Node Developer and Designer
         </title>
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:title"
+          content="Ryan Irilli - React, Typescript, Node Developer and Designer"
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:image"
+          content="https://www.justanotherryan.com/meta-image.png"
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:url"
+          content="https://www.justanotherryan.com/"
+        />
       </Head>
       <main>
         <TopNav shouldShow={isIntroComplete} />
@@ -96,7 +119,12 @@ export default function Home() {
             justify="flex-start"
             mt={[0, null, 16]}
           >
-            <Container maxW="container.lg">
+            <Container
+              ref={introAnimationContainerRef}
+              maxW="container.lg"
+              opacity={0}
+              transition="opacity 500ms ease"
+            >
               <AspectRatio ratio={[9 / 16, null, 16 / 9]}>
                 <Lottie
                   onComplete={setIsIntroComplete.on}
