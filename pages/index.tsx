@@ -82,7 +82,7 @@ export default function Home() {
       <YearsExperience />
       <DesignAndDevelopment />
       <SystemThinking />
-      <Skills />
+      {/* <Skills /> */}
       <AboutMe />
       <Footer />
     </>

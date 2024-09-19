@@ -7,7 +7,7 @@ import {
   IconButton,
   Icon,
 } from "@chakra-ui/react";
-import { socialIcons } from "../utils/contants";
+import { SocialIcon, socialIcons } from "../utils/contants";
 
 export default function Footer(): JSX.Element {
   return (
@@ -18,12 +18,13 @@ export default function Footer(): JSX.Element {
             <Text>
               <strong>Ryan Irilli</strong>
             </Text>
-            <Text textStyle="bodySmall">Frontend Engineer</Text>
-            <Text textStyle="bodySmall">Seattle, WA</Text>
+            <Text textStyle="body">Frontend Engineer</Text>
+            <Text textStyle="body">Seattle, WA</Text>
           </Box>
           <HStack border="1px" py={2}>
-            {socialIcons.map(({ DisplayIcon, label, url }, i) => (
+            {socialIcons.map(({ DisplayIcon, label, url }: SocialIcon, i) => (
               <IconButton
+                size="lg"
                 key={i}
                 isRound
                 colorScheme="white"

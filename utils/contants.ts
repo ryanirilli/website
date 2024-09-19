@@ -1,7 +1,13 @@
-import { FiLinkedin, FiTwitter, FiGithub } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { IconType } from "react-icons";
 
-export const socialIcons = [
+interface SocialIcon {
+  DisplayIcon: IconType;
+  label: string;
+  url: string;
+}
+
+export const socialIcons: SocialIcon[] = [
   {
     DisplayIcon: FaLinkedin,
     label: "linkedin link",

@@ -50,6 +50,7 @@ export default function YearsExperience() {
 
   const content = isActivated && (
     <>
+      {/* @ts-ignore */}
       <Container maxW="container.lg" border={[0, null, "1px"]}>
         <Box position="relative">
           <Box position="absolute" top={[0, null, 8]} left={[0, null, 4]}>
@@ -57,8 +58,8 @@ export default function YearsExperience() {
               <SectionHeading>10+ Years Experience</SectionHeading>
               <motion.div variants={fadeIn}>
                 <Text maxW={80}>
-                  I have helped build applications at scale by using tools and
-                  frameworks made for modern web development.
+                  I have helped build applications that scale with libraries,
+                  frameworks and patterns for modern web development.
                 </Text>
               </motion.div>
             </motion.div>
@@ -67,31 +68,6 @@ export default function YearsExperience() {
             <Lottie lottiePlayerOptions={lottiePlayerOptions} />
           </AspectRatio>
         </Box>
-      </Container>
-      <Container py={4} mt={4} maxW="container.lg">
-        <Flex
-          align={["flex-start", null, "center"]}
-          direction={["column", null, "row"]}
-          mb={[32, null, 0]}
-        >
-          <Link
-            passHref
-            href="/case-studies/building-a-web-architecture-optimized-for-speed"
-          >
-            <Button
-              leftIcon={<Icon as={FaRegLightbulb} />}
-              variant="outline"
-              colorScheme="white"
-              mb={[2, null, 0]}
-            >
-              Read my post
-            </Button>
-          </Link>
-          <Text pl={[0, null, 2]} maxW={["75%", null, "none"]}>
-            on building a web architecture optimized for developer happiness and
-            product growth
-          </Text>
-        </Flex>
       </Container>
     </>
   );
