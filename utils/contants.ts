@@ -18,9 +18,4 @@ export const socialIcons: SocialIcon[] = [
     label: "github link",
     url: "https://github.com/ryanirilli",
   },
-  {
-    DisplayIcon: FaTwitter,
-    label: "twitter link",
-    url: "https://twitter.com/ryanirilli",
-  },
 ];
