@@ -95,20 +95,14 @@ export default function Home() {
           Ryan Irilli - React, Typescript, Node Developer and Designer
         </title>
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="og:title"
           content="Ryan Irilli - React, Typescript, Node Developer and Designer"
         />
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="og:image"
           content="https://www.justanotherryan.com/meta-image.png"
         />
-        <meta
-          prefix="og: http://ogp.me/ns#"
-          property="og:url"
-          content="https://www.justanotherryan.com/"
-        />
+        <meta property="og:url" content="https://www.justanotherryan.com/" />
       </Head>
       <main>
         <TopNav shouldShow={isIntroComplete} />

@@ -4,7 +4,7 @@ import { FiFigma } from "react-icons/fi";
 import { FaReact } from "react-icons/fa";
 import { GrNode } from "react-icons/gr";
 import {
-  SiNextDotJs,
+  SiNextdotjs,
   SiApollographql,
   SiTypescript,
   SiAdobeaftereffects,
@@ -42,7 +42,7 @@ export default function Skills(): JSX.Element {
         <SectionHeading>Client</SectionHeading>
         <SkillRow name="Typescript" SkillIcon={SiTypescript} />
         <SkillRow name="React" SkillIcon={FaReact} />
-        <SkillRow name="Next.js" SkillIcon={SiNextDotJs} />
+        <SkillRow name="Next.js" SkillIcon={SiNextdotjs} />
       </Box>
       <Box mb={16}>
         <SectionHeading>Server</SectionHeading>
