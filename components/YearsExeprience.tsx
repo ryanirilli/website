@@ -13,7 +13,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import PageContainer from "./PageContainer";
 import SectionHeading from "./SectionHeading";
-import Lottie, { LottiePLayerOptions } from "./Lottie";
+import Lottie, { LottiePlayerOptions } from "./Lottie";
 import { useMemo } from "react";
 import { FaRegLightbulb } from "react-icons/fa";
 
@@ -40,7 +40,7 @@ export default function YearsExperience() {
     md: "/desktop-experience-animation.json",
   });
 
-  const lottiePlayerOptions: LottiePLayerOptions = useMemo(
+  const lottiePlayerOptions: LottiePlayerOptions = useMemo(
     () => ({
       path: animationPath,
       loop: false,

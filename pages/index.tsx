@@ -16,7 +16,7 @@ import { SiApollographql, SiTypescript, SiCsswizardry } from "react-icons/si";
 import { IoLogoVercel } from "react-icons/io5";
 import { ScaleLinear, scaleLinear } from "d3-scale";
 
-import Lottie, { LottiePLayerOptions } from "../components/Lottie";
+import Lottie, { LottiePlayerOptions } from "../components/Lottie";
 import TopNav from "../components/TopNav";
 import Footer from "../components/Footer";
 import { useEffect, useMemo } from "react";
@@ -68,7 +68,7 @@ export default function Home() {
     }
   }, [isIntroComplete]);
 
-  const introPlayerOptions = useMemo<LottiePLayerOptions>(
+  const introPlayerOptions = useMemo<LottiePlayerOptions>(
     () => ({
       path: introAnimationPath,
       loop: false,
