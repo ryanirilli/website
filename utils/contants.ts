@@ -1,7 +1,7 @@
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { IconType } from "react-icons";
 
-interface SocialIcon {
+export interface SocialIcon {
   DisplayIcon: IconType;
   label: string;
   url: string;

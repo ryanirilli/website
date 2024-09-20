@@ -15,13 +15,14 @@
     "d3-scale": "^4.0.0",
     "framer-motion": "^4.1.17",
     "lottie-web": "^5.7.12",
-    "next": "11.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "^14.2.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
     "@types/d3-scale": "^4.0.1",
+    "@types/node": "22.5.5",
     "@types/react": "17.0.17",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",

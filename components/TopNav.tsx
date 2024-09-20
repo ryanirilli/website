@@ -42,14 +42,12 @@ export default function TopNav({ shouldShow = true }: ITopNav): JSX.Element {
           <Box px={[4, null, 8]} py={[2, null, 4]}>
             <Flex align="center">
               <Link href="/">
-                <a>
-                  <Image
-                    alt="ryan irilli logo"
-                    src="/logo.svg"
-                    width={68}
-                    height={45}
-                  />
-                </a>
+                <Image
+                  alt="ryan irilli logo"
+                  src="/logo.svg"
+                  width={68}
+                  height={45}
+                />
               </Link>
               <HStack ml={2}>
                 {socialIcons.map(({ DisplayIcon, label, url }, i) => (

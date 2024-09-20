@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Box, BoxProps } from "@chakra-ui/react";
-import lottie, { AnimationConfig } from "lottie-web";
+import type { AnimationConfig } from "lottie-web";
 
 type LottieRenderer = "svg" | "canvas" | "html";
 
@@ -14,15 +14,16 @@ type AnimationConfigWithData<T extends LottieRenderer = "svg"> =
     animationData?: any;
   };
 
-export type LottiePLayerOptions =
+export type LottiePlayerOptions =
   | Omit<AnimationConfigWithData<"svg">, "container">
   | Omit<AnimationConfigWithPath<"svg">, "container">
   | Omit<AnimationConfigWithData<"canvas">, "container">
   | Omit<AnimationConfigWithPath<"canvas">, "container">;
+
 interface Props extends BoxProps {
   onComplete?: () => void;
   onLoopComplete?: () => void;
-  lottiePlayerOptions: LottiePLayerOptions;
+  lottiePlayerOptions: LottiePlayerOptions;
 }
 
 function Lottie({
@@ -34,24 +35,39 @@ function Lottie({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current) {
-      return;
-    }
-    const animation = lottie.loadAnimation({
-      container: containerRef.current, // the dom element that will contain the animation
-      // @ts-ignore - lottie package types this incorrectly with generics, does not allow consumer to set renderer
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      ...lottiePlayerOptions,
+    let animation: any;
+    let isDestroyed = false;
+
+    // Dynamically import lottie-web
+    import("lottie-web").then((module) => {
+      if (isDestroyed) {
+        return;
+      }
+      const lottie = module.default;
+      if (!containerRef.current) {
+        return;
+      }
+      animation = lottie.loadAnimation({
+        container: containerRef.current,
+        // @ts-ignore
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        ...lottiePlayerOptions,
+      });
+
+      onComplete && animation.addEventListener("complete", onComplete);
+      onLoopComplete &&
+        animation.addEventListener("loopComplete", onLoopComplete);
     });
-    onComplete && animation.addEventListener("complete", onComplete);
-    onLoopComplete &&
-      animation.addEventListener("loopComplete", onLoopComplete);
+
     return () => {
-      animation.destroy();
+      isDestroyed = true;
+      if (animation) {
+        animation.destroy();
+      }
     };
-  }, [lottiePlayerOptions, onComplete]);
+  }, [lottiePlayerOptions, onComplete, onLoopComplete]);
 
   return <Box {...rest} ref={containerRef} />;
 }
