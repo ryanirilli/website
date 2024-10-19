@@ -58,7 +58,7 @@ export default function AboutMe() {
           <SectionHeading>Location</SectionHeading>
           <motion.div variants={fadeIn}>
             <Text maxW={80}>
-              I live in Seattle, Washington with my wife and co-pilot{" "}
+              I live in Seattle, Washington with my wife and copilot{" "}
               <Anchor href="https://twitter.com/enjoylillian">
                 @enjoylillian
               </Anchor>
